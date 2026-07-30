@@ -53,7 +53,7 @@ class Plant:
                 f"{self.name.capitalize()}:",
                 "Error, age can't be negative"
             )
-            print("Age update rejected")     
+            print("Age update rejected")
 
     def get_height(self) -> float:
         return self._height
