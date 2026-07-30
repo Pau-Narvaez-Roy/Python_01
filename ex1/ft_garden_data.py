@@ -9,7 +9,7 @@ class Plant:
     def print_plant(self) -> None:
         print(
             f"{self.name.capitalize()}:",
-            f"{self.height}cm,",
+            f"{round(self.height, 1)}cm,",
             f"{self.age} days old"
         )
 
