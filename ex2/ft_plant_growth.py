@@ -59,3 +59,7 @@ if __name__ == "__main__":
     plant.set_grown(0)
     plant.set_aged(1)
     plant.print_plant()
+    print(
+        "Growth this week:",
+        f"{round(plant.get_height() - height_before, 1)}cm"
+    )
