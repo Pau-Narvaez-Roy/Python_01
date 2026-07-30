@@ -4,40 +4,40 @@ class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
         if height >= 0:
-            self.__height = height
+            self._height = height
         else:
             print(
                 f"{self.name.capitalize()}:",
                 "Error, height can't be negative",
                 "setting height at default value of 0"
             )
-            self.__height = 0
+            self._height = 0
         if age >= 0:
-            self.__age = age
+            self._age = age
         else:
             print(
                 f"{self.name.capitalize()}:",
                 "Error, age can't be negative",
                 "setting age at default value of 0"
             )
-            self.__age = 0
+            self._age = 0
 
     def print_plant(self) -> None:
         print(
             f"{self.name.capitalize()}:",
-            f"{round(self.__height, 1)}cm,",
-            f"{self.__age} days old"
+            f"{round(self._height, 1)}cm,",
+            f"{self._age} days old"
         )
 
     def set_grown(self, grown: float) -> None:
-        self.__height += grown
+        self._height += grown
 
     def set_aged(self, aged: int) -> None:
-        self.__age += aged
+        self._age += aged
 
     def set_height(self, height: float) -> None:
         if height >= 0:
-            self.__height = height
+            self._height = height
         else:
             print(
                 f"{self.name.capitalize()}:",
@@ -47,7 +47,7 @@ class Plant:
 
     def set_age(self, age: int) -> None:
         if age >= 0:
-            self.__age = age
+            self._age = age
         else:
             print(
                 f"{self.name.capitalize()}:",
@@ -56,10 +56,10 @@ class Plant:
             print("Age update rejected")     
 
     def get_height(self) -> float:
-        return self.__height
+        return self._height
 
     def get_age(self) -> int:
-        return self.__age
+        return self._age
 
 
 if __name__ == "__main__":
