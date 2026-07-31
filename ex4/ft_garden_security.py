@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, name: str, height: float, age: int) -> None:
+    def __init__(self, name: str, height: float, years: int) -> None:
         self.name = name
         if height >= 0:
             self._height = height
@@ -12,28 +12,28 @@ class Plant:
                 "setting height at default value of 0"
             )
             self._height = 0
-        if age >= 0:
-            self._age = age
+        if years >= 0:
+            self._years = years
         else:
             print(
                 f"{self.name.capitalize()}:",
                 "Error, age can't be negative",
                 "setting age at default value of 0"
             )
-            self._age = 0
+            self._years = 0
 
-    def print_plant(self) -> None:
+    def show(self) -> None:
         print(
             f"{self.name.capitalize()}:",
             f"{round(self._height, 1)}cm,",
-            f"{self._age} days old"
+            f"{self._years} days old"
         )
 
     def set_grown(self, grown: float) -> None:
         self._height += grown
 
-    def set_aged(self, aged: int) -> None:
-        self._age += aged
+    def age(self, age: int) -> None:
+        self._years += age
 
     def set_height(self, height: float) -> None:
         if height >= 0:
@@ -47,7 +47,7 @@ class Plant:
 
     def set_age(self, age: int) -> None:
         if age >= 0:
-            self._age = age
+            self._years = age
         else:
             print(
                 f"{self.name.capitalize()}:",
@@ -59,14 +59,14 @@ class Plant:
         return self._height
 
     def get_age(self) -> int:
-        return self._age
+        return self._years
 
 
 if __name__ == "__main__":
     rose = Plant("Rose", 15.0, 10)
     print("=== Garden Security System ===")
     print("Plant created:", end=" ")
-    rose.print_plant()
+    rose.show()
     print()
     rose.set_height(25)
     print(f"Height updated: {rose.get_height()}cm")
@@ -77,4 +77,4 @@ if __name__ == "__main__":
     rose.set_age(-1)
     print()
     print("Current state:", end=" ")
-    rose.print_plant()
+    rose.show()
