@@ -1,64 +1,64 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, name: str, height: float, age: int) -> None:
+    def __init__(self, name: str, height: float, years: int) -> None:
         self.name = name
         self.height = height
-        self.age = age
+        self.years = years
 
-    def print_plant(self) -> None:
+    def show(self) -> None:
         print(
             f"{self.name.capitalize()}:",
             f"{round(self.height, 1)}cm,",
-            f"{self.age} days old"
+            f"{self.years} days old"
         )
 
-    def set_grown(self, grown: float) -> None:
-        self.height += grown
+    def grow(self, grow: float) -> None:
+        self.height += grow
 
-    def set_aged(self, aged: int) -> None:
-        self.age += aged
+    def age(self, age: int) -> None:
+        self.years += age
 
     def get_height(self) -> float:
         return self.height
 
     def get_age(self) -> int:
-        return self.age
+        return self.years
 
 
 if __name__ == "__main__":
     plant = Plant("Rose", 25.0, 30)
     height_before = int(plant.get_height())
     print("=== Garden Plant Growth ===")
-    plant.print_plant()
+    plant.show()
     print("=== Day 1 ===")
-    plant.set_grown(0.5)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(0.5)
+    plant.years(1)
+    plant.show()
     print("=== Day 2 ===")
-    plant.set_grown(0.7)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(0.7)
+    plant.years(1)
+    plant.show()
     print("=== Day 3 ===")
-    plant.set_grown(0.3)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(0.3)
+    plant.years(1)
+    plant.show()
     print("=== Day 4 ===")
-    plant.set_grown(2)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(2)
+    plant.years(1)
+    plant.show()
     print("=== Day 5 ===")
-    plant.set_grown(1.2)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(1.2)
+    plant.years(1)
+    plant.show()
     print("=== Day 6 ===")
-    plant.set_grown(0.1)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(0.1)
+    plant.years(1)
+    plant.show()
     print("=== Day 7 ===")
-    plant.set_grown(0)
-    plant.set_aged(1)
-    plant.print_plant()
+    plant.grow(0)
+    plant.years(1)
+    plant.show()
     print(
         "Growth this week:",
         f"{round(plant.get_height() - height_before, 1)}cm"
