@@ -1,29 +1,29 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, name: str, height: float, age: int) -> None:
+    def __init__(self, name: str, height: float, years: int) -> None:
         self.name = name
         self.height = height
-        self.age = age
+        self.years = years
 
-    def print_plant(self) -> None:
+    def show(self) -> None:
         print(
             f"{self.name.capitalize()}:",
             f"{round(self.height, 1)}cm,",
-            f"{self.age} days old"
+            f"{self.years} days old"
         )
 
-    def set_grown(self, grown: float) -> None:
-        self.height += grown
+    def grow(self, grow: float) -> None:
+        self.height += grow
 
-    def set_aged(self, aged: int) -> None:
-        self.age += aged
+    def age(self, age: int) -> None:
+        self.years += age
 
     def get_height(self) -> float:
         return self.height
 
     def get_age(self) -> int:
-        return self.age
+        return self.years
 
 
 if __name__ == "__main__":
@@ -33,8 +33,8 @@ if __name__ == "__main__":
     sunflower = Plant("Sunflower", 80.0, 45)
     fern = Plant("Fern", 15.0, 120)
     print("=== Plant Factory Output ===")
-    rose.print_plant()
-    oak.print_plant()
-    cactus.print_plant()
-    sunflower.print_plant()
-    fern.print_plant()
+    rose.show()
+    oak.show()
+    cactus.show()
+    sunflower.show()
+    fern.show()
